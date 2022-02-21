@@ -2,9 +2,9 @@
 
 #### solution :
 
-This application helps users to find an optimistic way to optimize boxes with variety of dimensions inside a volume (truck), the app takes a list of items defined by height, width and length and returns how many trucks you need to transport the furniture and how to organize it in a volume.
-The calculation algorithm start by selecting a category (a category is a classification of truck types by there capacity), for that, we select the category that theoretically can hold all the items in it's volume, after that we test if we can put the biggest item inside the volume, if it's okay we return the selected category, otherwise we select the category that can hold this item.
-Next, we run in a loop, the positioning logic of items, starting from the biggest item to the smallest, we select the space that can hold this item (there is array of available spaces, initially start with the space the selected category), once a space is selected, the chosen space will be removed from the list of availability and we deduce new spaces.
+This application helps users to find an optimistic way to optimize boxes with variety of dimensions inside a volume (truck), the app takes a list of items defined by height, width and length and returns how many trucks you need to transport the furniture and how to organize it in a volume.<br>
+The calculation algorithm start by selecting a category (a category is a classification of truck types by there capacity), for that, we select the category that theoretically can hold all the items in it's volume, after that we test if we can put the biggest item inside the volume, if it's okay we return the selected category, otherwise we select the category that can hold this item.<br>
+Next, we run in a loop, the positioning logic of items, starting from the biggest item to the smallest, we select the space that can hold this item (there is array of available spaces, initially start with the space the selected category), once a space is selected, the chosen space will be removed from the list of availability and we deduce new spaces.<br>
 As we consume a space, new spaces is produced, the first one is the top of the item where we can put boxes that has dimensions smaller or equal to this item, so at this moment we will have new space but with a greater level, for example if we positioned an item in the truck surface (**level = 0**), the surface of this item will be new space with **level = 1**
 This process will execute repetitively until we position all the items.
 
